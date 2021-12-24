@@ -9,5 +9,4 @@ public class MycinelistApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MycinelistApplication.class, args);
 	}
-
 }
