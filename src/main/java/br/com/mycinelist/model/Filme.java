@@ -31,10 +31,10 @@ public class Filme {
 
     private String nome;
 
-    private int votacao;
+    private int classifique;
 
     @Lob
-    private String comentario;
+    private String avalie;
 
     @JsonFormat(shape = Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
     private LocalDateTime data;
