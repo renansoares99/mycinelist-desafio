@@ -21,7 +21,7 @@
         class="mb-2"
       ></b-form-rating>
       <label for="avalie">Avalie</label>
-      <b-form-textarea  
+      <b-form-textarea
         id="avalie"
         v-model="filme.avalie"
         type="text"
@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import filmeService from '../services/filmeService'
+import filmeService from "../services/filmeService";
 
 export default {
-  name: 'CadastrarFilme',
+  name: "CadastrarFilme",
 
   data() {
     return {
@@ -52,9 +52,24 @@ export default {
   },
 
   methods: {
+    /* saveFilme() {
+      var filmebd = {
+        nome: this.filme.nome,
+        classifique: this.filme.classifique,
+        avalie: this.filme.avalie
+      };
+
+      filmeService.saveFilme(filmebd).then(response => {
+        this.filme.id = response.filmebd.id;
+        console.log(response.filmebd);
+        alert("Filme Adicionado Com Sucesso!");
+      })
+    } */
     saveFilme() {
-      filmeService.saveFilme(this.filme).then(() => alert('Filme Adicionado Com Sucesso!'))
-    }
+      filmeService
+        .saveFilme(this.filme)
+        .then(() => alert("Filme Adicionado Com Sucesso!"));
+    },
   },
 };
 </script>

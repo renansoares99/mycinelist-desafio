@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <b-navbar toggleable type="danger" variant="danger">
       <b-navbar-toggle target="navbar-toggle-collapse">
         <template #default="{ expanded }">
@@ -20,4 +20,5 @@
 </template>
 
 <style>
+
 </style>
