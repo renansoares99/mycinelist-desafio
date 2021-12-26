@@ -2,6 +2,7 @@
   <div class="container mt-3">
     <h1>Publique Sobre o Filme</h1>
     <b-form @submit.prevent="saveFilme()">
+      <!-- Inicio Input Nome -->
       <label for="nome">Nome</label>
       <b-form-input
         id="nome"
@@ -12,7 +13,10 @@
         autocomplete="off"
         class="mb-2"
       ></b-form-input>
-      <label for="classifique">Classifique</label>
+      <!-- Fim Input Nome -->
+
+      <!-- Inicio Rating -->
+      <label for="classifique">O Quanto Você Gostou do Filme?</label>
       <b-form-rating
         id="classifique"
         v-model="filme.classifique"
@@ -20,17 +24,24 @@
         variant="warning"
         class="mb-2"
       ></b-form-rating>
-      <label for="avalie">Avalie</label>
+      <!-- Fim Rating -->
+
+      <!-- Inicio Textarea -->
+      <label for="avalie">Avalie o Filme?</label>
       <b-form-textarea
         id="avalie"
         v-model="filme.avalie"
         type="text"
-        placeholder="O que você acha desse filme?"
+        placeholder="O que você achou desse filme?"
+        required
         rows="6"
         class="mb-2"
       ></b-form-textarea>
+      <!-- Fim Textarea -->
 
+      <!-- Inicio Button -->
       <b-button type="submit" variant="outline-primary mt-2">Salvar</b-button>
+      <!-- Fim Button -->
     </b-form>
   </div>
 </template>
@@ -52,19 +63,6 @@ export default {
   },
 
   methods: {
-    /* saveFilme() {
-      var filmebd = {
-        nome: this.filme.nome,
-        classifique: this.filme.classifique,
-        avalie: this.filme.avalie
-      };
-
-      filmeService.saveFilme(filmebd).then(response => {
-        this.filme.id = response.filmebd.id;
-        console.log(response.filmebd);
-        alert("Filme Adicionado Com Sucesso!");
-      })
-    } */
     saveFilme() {
       filmeService
         .saveFilme(this.filme)

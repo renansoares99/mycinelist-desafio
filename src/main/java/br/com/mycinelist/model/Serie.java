@@ -31,7 +31,9 @@ public class Serie {
 
     private String nome;
 
-    private int episodio;
+    private String temporada;
+
+    private String episodio;
 
     private int classifique;
 

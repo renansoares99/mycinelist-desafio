@@ -1,20 +1,24 @@
 <template>
   <div class="container mt-4">
-    <h1>Filmes Favoritos</h1>
+    <h1>Séries Favoritos</h1>
     <table>
       <thead>
         <th>Nome</th>
-        <th>Classificação</th>
-        <th>Avaliação</th>
+        <th>Temp. Atual</th>
+        <th>Ep. Atual</th>
+        <th>Sua Classificação</th>
+        <th>Sua Avaliação</th>
         <th>Data de Lançamento</th>
         <th>Editar/Deletar</th>
       </thead>
       <tbody>
-        <tr v-for="filmeService of filme" :key="filmeService.id">
-          <td>{{ filmeService.nome }}</td>
-          <td>{{ filmeService.classifique }}</td>
-          <td>{{ filmeService.avalie }}</td>
-          <td>{{ filmeService.data }}</td>
+        <tr v-for="serieService of serie" :key="serieService.id">
+          <td>{{ serieService.nome }}</td>
+          <td>{{ serieService.temporada }}</td>
+          <td>{{ serieService.episodio }}</td>
+          <td>{{ serieService.classifique }}</td>
+          <td>{{ serieService.avalie }}</td>
+          <td>{{ serieService.data }}</td>
           <td>
             <b-button variant="outline-info" class="mt-2">
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
@@ -30,22 +34,21 @@
 </template>
 
 <script>
-import filmeService from "../services/filmeService";
+import serieService from "../services/serieService";
 
 export default {
-  name: "Home",
+  nome: "HomeS",
 
   data() {
     return {
-      filme: [],
-      id: '',
+      serie: [],
     };
   },
 
   mounted() {
-    filmeService.listar().then((list) => {
+    serieService.Listar().then((list) => {
       console.log(list.data);
-      this.filme = list.data;
+      this.serie = list.data;
     });
   },
 };
@@ -68,7 +71,7 @@ h1 {
 }
 
 .container {
-  padding-bottom: 35%;
+  padding-bottom: 20px;
   height: 100%;
   background-color: #f2f2f2;
 }

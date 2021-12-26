@@ -5,14 +5,24 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home.vue')
+    path: '/home-f',
+    name: 'HomeF',
+    component: () => import('@/views/HomeF.vue')
   },
   {
-    path: '/cadastro',
+    path: '/home-s',
+    name: 'HomeS',
+    component: () => import('@/views/HomeS.vue')
+  },
+  {
+    path: '/cadastro-f',
     name: 'CadastrarFilme',
     component: () => import('@/views/CadastrarFilme.vue')
+  },
+  {
+    path: '/cadastro-s',
+    name: 'CadastrarSerie',
+    component: () => import('@/views/CadastrarSerie.vue')
   }
 ]
 
