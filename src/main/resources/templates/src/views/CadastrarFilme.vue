@@ -52,19 +52,6 @@ export default {
   },
 
   methods: {
-    /* saveFilme() {
-      var filmebd = {
-        nome: this.filme.nome,
-        classifique: this.filme.classifique,
-        avalie: this.filme.avalie
-      };
-
-      filmeService.saveFilme(filmebd).then(response => {
-        this.filme.id = response.filmebd.id;
-        console.log(response.filmebd);
-        alert("Filme Adicionado Com Sucesso!");
-      })
-    } */
     saveFilme() {
       filmeService
         .saveFilme(this.filme)

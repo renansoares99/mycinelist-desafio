@@ -54,7 +54,7 @@ public class FilmeController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteFilme(@PathVariable Long id) {
         var deleteFilme = filmeRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme Não Encontrado"));
+            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme Não Encontrado."));
         filmeRepository.delete(deleteFilme);
         return "Deletado Com Sucesso!";
     }
@@ -71,7 +71,7 @@ public class FilmeController {
             filmeSave.setAvalie(filme.getAvalie());
             filmeRepository.save(filmeSave);
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme Não Encontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme Não Encontrado.");
         }
         return "Editado Com Sucesso!";
     }
