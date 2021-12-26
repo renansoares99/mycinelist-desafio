@@ -67,8 +67,8 @@ public class FilmeController {
         if(updateFilme.isPresent()) {
             var filmeSave = updateFilme.get();
             filmeSave.setNome(filme.getNome());
-            filmeSave.setVotacao(filme.getVotacao());
-            filmeSave.setComentario(filme.getComentario());
+            filmeSave.setClassifique(filme.getClassifique());
+            filmeSave.setAvalie(filme.getAvalie());
             filmeRepository.save(filmeSave);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme Não Encontrado");
