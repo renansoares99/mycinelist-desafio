@@ -10,22 +10,22 @@ const routes = [
     component: () => import('@/views/Home.vue')
   },
   {
-    path: '/home-f',
+    path: '/home/filme',
     name: 'HomeF',
     component: () => import('@/views/HomeF.vue')
   },
   {
-    path: '/home-s',
+    path: '/home/serie',
     name: 'HomeS',
     component: () => import('@/views/HomeS.vue')
   },
   {
-    path: '/cadastro-f',
+    path: '/cadastro/filme',
     name: 'CadastrarFilme',
     component: () => import('@/views/CadastrarFilme.vue')
   },
   {
-    path: '/cadastro-s',
+    path: '/cadastro/serie',
     name: 'CadastrarSerie',
     component: () => import('@/views/CadastrarSerie.vue')
   }

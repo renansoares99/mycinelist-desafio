@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-3">
     <h1>Publique Sobre a Série</h1>
-    <b-form @submit.prevent="saveSerie()">
+    <b-form>
       <!-- Inicio Input Nome -->
       <label for="nome" class="mt-1">Nome</label>
       <b-form-input
@@ -70,14 +70,19 @@
       <!-- Fim Textarea -->
 
       <!-- Inicio Button -->
-      <b-button type="submit" variant="outline-primary mt-2">Salvar</b-button>
+      <b-button
+        type="submit"
+        variant="outline-primary mt-2"
+        @click="editarSerie(serie, serieService.id)"
+        >Salvar</b-button
+      >
       <!-- Fim Button -->
     </b-form>
   </div>
 </template>
 
 <script>
-import serieService from "../services/serieService";
+/* import serieService from "../services/serieService"; */
 
 export default {
   nome: "CadastrarSerie",
@@ -85,6 +90,7 @@ export default {
   data() {
     return {
       serie: {
+        id: "",
         nome: "",
         temporada: "",
         episodio: "",
@@ -94,12 +100,6 @@ export default {
     };
   },
 
-  methods: {
-    saveSerie() {
-      serieService
-        .saveSerie(this.serie)
-        .then(() => alert("Série Adicionada Com Sucesso!"));
-    },
-  },
+  methods: {},
 };
 </script>

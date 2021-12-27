@@ -10,6 +10,10 @@ export default {
         return http.post('/serie', serie)
     },
 
+    editSerie(id, serie) {
+        return http.put(`/serie/${id}`, serie)
+    },
+
     deleteSerie(id) {
         return http.delete(`/serie/${id}`)
     }

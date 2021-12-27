@@ -3,7 +3,7 @@
     <h1>Publique Sobre o Filme</h1>
     <b-form @submit.prevent="saveFilme()">
       <!-- Inicio Input Nome -->
-      <label for="nome">Nome</label>
+      <label for="nome" class="mt-1">Nome</label>
       <b-form-input
         id="nome"
         v-model="filme.nome"
@@ -16,7 +16,7 @@
       <!-- Fim Input Nome -->
 
       <!-- Inicio Rating -->
-      <label for="classifique">Avalie o filme</label>
+      <label for="classifique" class="mt-2">Avalie o filme</label>
       <b-form-rating
         id="classifique"
         v-model="filme.classifique"
@@ -27,7 +27,7 @@
       <!-- Fim Rating -->
 
       <!-- Inicio Textarea -->
-      <label for="avalie">Adicione um comentário</label>
+      <label for="avalie" class="mt-2">Adicione um comentário</label>
       <b-form-textarea
         id="avalie"
         v-model="filme.avalie"
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import filmeService from "../services/filmeService";
+/* import filmeService from "../services/filmeService"; */
 
 export default {
   name: "CadastrarFilme",
@@ -62,12 +62,7 @@ export default {
     };
   },
 
-  methods: {
-    saveFilme() {
-      filmeService
-        .saveFilme(this.filme)
-        .then(() => alert("Filme Adicionado Com Sucesso!"));
-    },
-  },
+  methods: {},
 };
 </script>
+
