@@ -43,7 +43,6 @@
       <b-button
         type="submit"
         variant="outline-primary mt-2"
-        onClick="location.href = 'http://localhost:8081/home/filme';"
         >Salvar</b-button
       >
       <!-- Fim Button -->
