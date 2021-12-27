@@ -6,7 +6,7 @@
       <label for="nome" class="mt-1">Nome</label>
       <b-form-input
         id="nome"
-        v-model="filme.nome"
+        v-model="edit.nome"
         type="text"
         placeholder="Doutor Estranho, ..."
         required
@@ -19,7 +19,7 @@
       <label for="classifique" class="mt-2">Avalie o filme</label>
       <b-form-rating
         id="classifique"
-        v-model="filme.classifique"
+        v-model="edit.classifique"
         type="number"
         variant="warning"
         class="mb-2"
@@ -30,7 +30,7 @@
       <label for="avalie" class="mt-2">Adicione um comentário</label>
       <b-form-textarea
         id="avalie"
-        v-model="filme.avalie"
+        v-model="edit.avalie"
         type="text"
         placeholder="O que você achou desse filme?"
         required
@@ -54,7 +54,7 @@ export default {
 
   data() {
     return {
-      filme: {
+      edit: {
         nome: "",
         classifique: null,
         avalie: "",

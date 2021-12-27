@@ -6,7 +6,7 @@
       <label for="nome" class="mt-1">Nome</label>
       <b-form-input
         id="nome"
-        v-model="serie.nome"
+        v-model="edit.nome"
         type="text"
         placeholder="The Witcher, ..."
         required
@@ -20,7 +20,7 @@
       <label for="temporada" class="mt-2">Em qual temporada você está?</label>
       <b-form-input
         id="temporada"
-        v-model="serie.temporada"
+        v-model="edit.temporada"
         type="text"
         placeholder="Temp. 1, ..."
         required
@@ -34,7 +34,7 @@
       <label for="episodio" class="mt-2">Em qual episódio você está?</label>
       <b-form-input
         id="episodio"
-        v-model="serie.episodio"
+        v-model="edit.episodio"
         type="text"
         placeholder="Ep. 1, ..."
         required
@@ -48,7 +48,7 @@
       <label for="classifique" class="mt-2">Avalie a série</label>
       <b-form-rating
         id="classifique"
-        v-model="serie.classifique"
+        v-model="edit.classifique"
         type="number"
         variant="warning"
         class="mb-1"
@@ -59,7 +59,7 @@
       <label for="avalie" class="mt-1">Adicione um comentário</label>
       <b-form-textarea
         id="avalie"
-        v-model="serie.avalie"
+        v-model="edit.avalie"
         type="text"
         placeholder="O que você achou dessa série?"
         required
@@ -84,7 +84,7 @@ export default {
 
   data() {
     return {
-      serie: {
+      edit: {
         id: "",
         nome: "",
         temporada: "",
