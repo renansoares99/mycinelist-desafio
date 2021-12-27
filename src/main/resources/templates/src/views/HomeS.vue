@@ -20,10 +20,20 @@
           <td>{{ serieService.avalie }}</td>
           <td>{{ serieService.data }}</td>
           <td>
-            <b-button variant="outline-info" class="mt-2">
+            <b-button
+              variant="outline-info"
+              class="mt-2"
+              onClick="window.location.reload()"
+              @click="editarSerie(serieService.id)"
+            >
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
             </b-button>
-            <b-button variant="outline-danger" class="mt-2">
+            <b-button
+              variant="outline-danger"
+              class="mt-2"
+              onClick="window.location.reload()"
+              @click="removerSerie(serieService.id)"
+            >
               <b-icon icon="trash" aria-hidden="true"></b-icon>
             </b-button>
           </td>
@@ -50,6 +60,14 @@ export default {
       console.log(list.data);
       this.serie = list.data;
     });
+  },
+
+  methods: {
+    removerSerie(id) {
+      serieService.deleteSerie(id).then(() => {
+        this.serie();
+      })
+    }
   },
 };
 </script>

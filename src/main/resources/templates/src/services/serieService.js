@@ -8,5 +8,9 @@ export default {
 
     saveSerie(serie) {
         return http.post('/serie', serie)
+    },
+
+    deleteSerie(id) {
+        return http.delete(`/serie/${id}`)
     }
 }

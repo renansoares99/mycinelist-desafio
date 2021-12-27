@@ -11,6 +11,6 @@ export default {
     },
 
     deleteFilme(id) {
-        return http.put(`/filme/${id}`)
+        return http.delete(`/filme/${id}`)
     }
 }

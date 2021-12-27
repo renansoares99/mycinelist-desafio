@@ -16,10 +16,20 @@
           <td>{{ filmeService.avalie }}</td>
           <td>{{ filmeService.data }}</td>
           <td>
-            <b-button variant="outline-info" class="mt-2">
+            <b-button
+              variant="outline-info"
+              class="mt-2"
+              onClick="window.location.reload()"
+              @click="editarFilme(filmeService.id)"
+            >
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
             </b-button>
-            <b-button variant="outline-danger" class="mt-2">
+            <b-button
+              variant="outline-danger"
+              class="mt-2"
+              onClick="window.location.reload()"
+              @click="removerFilme(filmeService.id)"
+            >
               <b-icon icon="trash" aria-hidden="true"></b-icon>
             </b-button>
           </td>
@@ -46,6 +56,14 @@ export default {
       console.log(list.data);
       this.filme = list.data;
     });
+  },
+
+  methods: {
+    removerFilme(id) {
+      filmeService.deleteFilme(id).then(() => {
+        this.filme();
+      });
+    },
   },
 };
 </script>
