@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-3">
     <h1>Publique Sobre o Filme</h1>
-    <b-form @submit.prevent="saveFilme()">
+    <b-form>
       <!-- Inicio Input Nome -->
       <label for="nome" class="mt-1">Nome</label>
       <b-form-input
@@ -40,7 +40,7 @@
       <!-- Fim Textarea -->
 
       <!-- Inicio Button -->
-      <b-button type="submit" variant="outline-primary mt-2">Salvar</b-button>
+      <b-button type="submit" variant="outline-primary mt-1">Salvar</b-button>
       <!-- Fim Button -->
     </b-form>
   </div>
@@ -50,7 +50,7 @@
 /* import filmeService from "../services/filmeService"; */
 
 export default {
-  name: "CadastrarFilme",
+  name: "EditFilmeModal",
 
   data() {
     return {

@@ -70,12 +70,7 @@
       <!-- Fim Textarea -->
 
       <!-- Inicio Button -->
-      <b-button
-        type="submit"
-        variant="outline-primary mt-2"
-        @click="editarSerie(serie, serieService.id)"
-        >Salvar</b-button
-      >
+      <b-button type="submit" variant="outline-primary mt-1">Salvar</b-button>
       <!-- Fim Button -->
     </b-form>
   </div>
@@ -85,7 +80,7 @@
 /* import serieService from "../services/serieService"; */
 
 export default {
-  nome: "CadastrarSerie",
+  nome: "EditSerieModal",
 
   data() {
     return {

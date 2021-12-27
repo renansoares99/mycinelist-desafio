@@ -11,13 +11,13 @@ const routes = [
   },
   {
     path: '/home/filme',
-    name: 'HomeF',
-    component: () => import('@/views/HomeF.vue')
+    name: 'HomeFilme',
+    component: () => import('@/views/HomeFilme.vue')
   },
   {
     path: '/home/serie',
-    name: 'HomeS',
-    component: () => import('@/views/HomeS.vue')
+    name: 'HomeSerie',
+    component: () => import('@/views/HomeSerie.vue')
   },
   {
     path: '/cadastro/filme',

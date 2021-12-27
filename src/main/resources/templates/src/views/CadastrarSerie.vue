@@ -70,7 +70,12 @@
       <!-- Fim Textarea -->
 
       <!-- Inicio Button -->
-      <b-button type="submit" variant="outline-primary mt-2">Salvar</b-button>
+      <b-button
+        type="submit"
+        variant="outline-primary mt-2"
+        onClick="location.href = 'http://localhost:8081/home/serie';"
+        >Salvar</b-button
+      >
       <!-- Fim Button -->
     </b-form>
   </div>

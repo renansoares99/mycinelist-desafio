@@ -1,13 +1,11 @@
 <template>
   <div class="container mt-4">
-    <h1>Séries Favoritas</h1>
+    <h1>Filmes Favoritos</h1>
     <!-- Inicio Tabela -->
     <table>
       <thead>
         <!-- Inicio ELemento -->
         <th>Nome</th>
-        <th>Temp. Atual</th>
-        <th>Ep. Atual</th>
         <th>Minha Classificação</th>
         <th>Minha Avaliação</th>
         <th>Data de Publicação</th>
@@ -16,37 +14,38 @@
       </thead>
 
       <tbody>
-        <tr v-for="serieService of serie" :key="serieService.id">
+        <tr v-for="filmeService of filme" :key="filmeService.id">
           <!-- Inicio Dados -->
-          <td>{{ serieService.nome }}</td>
-          <td>{{ serieService.temporada }}</td>
-          <td>{{ serieService.episodio }}</td>
-          <td>{{ serieService.classifique }}</td>
-          <td>{{ serieService.avalie }}</td>
-          <td>{{ serieService.data }}</td>
+          <td>{{ filmeService.nome }}</td>
+          <td>{{ filmeService.classifique }}</td>
+          <td>{{ filmeService.avalie }}</td>
+          <td>{{ filmeService.data }}</td>
           <td>
             <!-- Inicio Edit -->
-            <b-button
-              v-b-modal.modal-serie
-              variant="outline-info"
-              class="mt-2"
-              @click="editar(serieService)"
-            >
+            <b-button v-b-modal.modal-filme variant="outline-info" class="mt-2">
               <b-icon icon="pencil-square" aria-hidden="true"></b-icon>
             </b-button>
 
             <!-- Inicio Item Modal -->
-            <b-modal id="modal-serie" title="Editar">
-              <EditSerieModal />
+            <b-modal id="modal-filme" title="Editar Série" hide-footer>
+              <EditFilmeModal />
+              <b-button
+                class="mt-3"
+                variant="outline-danger"
+                block
+                @click="$bvModal.hide('modal-filme')"
+                >Cancelar</b-button
+              >
             </b-modal>
-            <!-- Fim Item Modal --> <!-- Fim Edit -->
+            <!-- Fim Item Modal -->
+            <!-- Fim Edit -->
 
             <!-- Inicio Delete -->
             <b-button
               variant="outline-danger"
               class="mt-2"
               onClick="window.location.reload()"
-              @click="removerSerie(serieService.id)"
+              @click="removerFilme(filmeService.id)"
             >
               <b-icon icon="trash" aria-hidden="true"></b-icon>
             </b-button>
@@ -61,34 +60,30 @@
 </template>
 
 <script>
-import serieService from "../services/serieService";
-import EditSerieModal from "../components/EditSerieModal.vue";
+import filmeService from "../services/filmeService";
+import EditFilmeModal from "../components/EditFilmeModal.vue";
 
 export default {
-  nome: "HomeS",
-  components: { EditSerieModal },
+  name: "HomeFilme",
+  components: { EditFilmeModal },
 
   data() {
     return {
-      serie: [],
+      filme: [],
     };
   },
 
   mounted() {
-    serieService.Listar().then((list) => {
+    filmeService.listar().then((list) => {
       /* console.log(list.data); */
-      this.serie = list.data;
+      this.filme = list.data;
     });
   },
 
   methods: {
-    editar(serie) {
-      this.serieService = serie;
-    },
-
-    removerSerie(id) {
-      serieService.deleteSerie(id).then(() => {
-        this.serie();
+    removerFilme(id) {
+      filmeService.deleteFilme(id).then(() => {
+        this.filme();
       });
     },
   },
